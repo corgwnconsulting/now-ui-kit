@@ -6018,6 +6018,15 @@ img {
   z-index: -1;
 }
 
+.page-header .page-header-image-small {
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
+}
+
 .page-header .content-center {
   position: absolute;
   top: 50%;
