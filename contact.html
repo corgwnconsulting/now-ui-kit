@@ -99,44 +99,93 @@
       -->
 
       
-        <div class="row">
-          <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
-            <div id="contact-form-section cform">
-              <div class="status alert alert-success" style="display:none"></div>
-              <form id="contact-form" class="contact pt-3" name="contact-form" method="post" action="send-email.php">
-                <div class="form-group">
+        <!--Start Contact Form-->
+    <div class="section section-contact-us text-center">
+      <div class="container">
+        <h2 class="title">Want to work with us?</h2>
+        <h5 class="Paragraph">We'd love to hear from you!</h5>    
+          <div class="row">
+            <div class="col-lg-4 text-center col-md-8 ml-auto mr-auto">
+              <div id="contact-form-section cform">
+                <form method="POST" id="form">
+                <!--Web3 Access Code for Email-->
+                  <input type="hidden" name="access_key" value="20363961-4deb-4997-ab59-3c389964b370">
+                <!--Start Name Field-->
                   <div class="input-group input-lg">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="now-ui-icons users_circle-08"></i>
-                      </span>
-                    </div>
-                    <input type="text" name="subject" class="form-control" required="required" placeholder="Name...">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons users_circle-08"></i>
+                    </span>
                   </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-lg">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="now-ui-icons ui-1_email-85"></i>
-                      </span>
-                    </div>
-                    <input type="email" name= "email" class="form-control mail-field" required="required" placeholder="Email...">
+                  <input type="text" name="name" class="form-control" required="required" placeholder="Name...">
                   </div>
-                </div>
-                </div>
+                <!--End Name Field-->
+                <!--Start Email Field-->
+                  <div class="form-group">
+                    <div class="input-group input-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="now-ui-icons ui-1_email-85"></i>
+                        </span>
+                      </div>
+                      <input type="email" name= "email" id="email" class="form-control mail-field" required="required" placeholder="Email...">
+                    </div>
+                <!--Start Email Field-->
+                <!--Start Message Field-->
                 <div class="form-group">
                   <div class="textarea-container">
-                    <textarea name="message" id="message" class="form-control" rows="8" cols="80" required="required" placeholder="Type a message..."></textarea>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-round btn-block btn-lg">Send Message</button>
+                    <textarea name="message" id="message" class="form-control" rows="4" cols="80" required="required" placeholder="Type a message..."></textarea>
                   </div>
                 </div>
+                <!--End Message Field-->
+              <!--Start Submit Button-->
+              <button type="submit" class="btn btn-primary btn-round btn-block btn-lg">Send Message</button>
+              <!--End Submit Button-->
               </form>
-            </div>
-          </div>
-        </div>
+              <div id="result"></div>     
+        <script>
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+        
+        form.addEventListener('submit', function(e) {
+            const formData = new FormData(form);
+            e.preventDefault();
+        
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+        
+            result.innerHTML = "Please wait..."
+        
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status === 200) {
+                        result.innerHTML = json.message;
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function() {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
+        });
+        </script>
+    <!--End Contact Form-->
       </div>
     </div>
   </div>
