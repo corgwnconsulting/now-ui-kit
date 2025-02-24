@@ -5606,6 +5606,10 @@ img {
   height: 125vh;
 }
 
+.index-page .page-header-mini {
+  height: 64vh;
+}
+
 .index-page .page-header .container>.content-center {
   top: 37%;
 }
@@ -5997,11 +6001,6 @@ img {
 .page-header.page-header-small {
   min-height: 60vh;
   max-height: 440px;
-}
-
-.page-header.page-header-mini {
-  min-height: 60vh;
-  max-height: 40px;
 }
 
 .page-header:before {
