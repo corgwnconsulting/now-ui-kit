@@ -89,8 +89,17 @@
         </div>
       </div> 
     </div> -->
-       
-    <!--Start Contact Form-->
+    <div class="section section-contact-us text-center">
+      <div class="container">
+        <h2 class="title">Want to work with us?</h2>
+        <p class="description">We'd love to hear from you!</p>
+
+       <!--  <div class="container" id="ff-compose"></div>
+        <script async defer src="https://formfacade.com/include/108567564754596566278/form/1FAIpQLScJXnR86Y1Z3bEsTELPecSsUqjPedA7E9DDz_VZGk_JV7afkg/bootstrap.js?div=ff-compose"></script>
+      -->
+
+      
+        <!--Start Contact Form-->
     <div class="section section-contact-us text-center">
       <div class="container">
         <h2 class="title">Want to work with us?</h2>
@@ -158,23 +167,10 @@
                 .then(async (response) => {
                     let json = await response.json();
                     if (response.status === 200) {
-                        
-                      
-                      result.innerHTML = json.message;
+                        result.innerHTML = json.message;
                     } else {
                         console.log(response);
-                        <div class="container">
-                          <div class="alert-icon">
-                            <i class="now-ui-icons ui-2_like"></i>
-                          </div>
-                          <strong>result.innerHTML = json.message;</strong> 
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">
-                              <i class="now-ui-icons ui-1_simple-remove"></i>
-                            </span>
-                          </button>
-                        </div>
-                        
+                        result.innerHTML = json.message;
                     }
                 })
                 .catch(error => {
