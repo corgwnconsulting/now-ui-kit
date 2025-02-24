@@ -6001,7 +6001,7 @@ img {
 
 .page-header.page-header-mini {
   min-height: 60vh;
-  max-height: 220px;
+  max-height: 40px;
 }
 
 .page-header:before {
