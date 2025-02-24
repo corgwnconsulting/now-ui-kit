@@ -39,7 +39,7 @@
 </head>
 
 <body class="index-page sidebar-collapse">
-  <!-- Navbar -->
+  <!-- Start Navbar -->
   <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="300">
     <div class="container">
       <div class="navbar-translate">
@@ -86,11 +86,6 @@
       <div class="content-center">
         <div class="container">
           <h1 class="title">Corgwn can help you with your consulting needs</h1>
-          <!-- <div class="text-center">
-            <a href="https://www.linkedin.com/in/cartervick/" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div> -->
         </div>
       </div>
     </div>
@@ -104,6 +99,7 @@
         </div>
       </div>
     </div>
+    <!--Start Leadership Header, Picture, and Bio-->
     <div class="section section-team text-center">
       <div class="container">
         <h2 class="title">Our Leadership Team</h2>
@@ -132,11 +128,8 @@
         </div>
       </div>
     </div>
-
-
-  
-
-
+    <!--End Leadership Header, Picture, and Bio-->
+    <!--Start Contact Form-->
     <div class="section section-contact-us text-center">
       <div class="container">
         <h2 class="title">Want to work with us?</h2>
@@ -145,40 +138,41 @@
             <div class="col-lg-4 text-center col-md-8 ml-auto mr-auto">
               <div id="contact-form-section cform">
                 <form method="POST" id="form">
-                <input type="hidden" name="access_key" value="20363961-4deb-4997-ab59-3c389964b370">
-                <div class="input-group input-lg">
+                <!--Web3 Access Code for Email-->
+                  <input type="hidden" name="access_key" value="20363961-4deb-4997-ab59-3c389964b370">
+                <!--Start Name Field-->
+                  <div class="input-group input-lg">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                   </div>
                   <input type="text" name="name" class="form-control" required="required" placeholder="Name...">
-                </div>
-                
-              
-                <div class="form-group">
-                  <div class="input-group input-lg">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="now-ui-icons ui-1_email-85"></i>
-                      </span>
-                    </div>
-                    <input type="email" name= "email" id="email" class="form-control mail-field" required="required" placeholder="Email...">
                   </div>
-              
-    
+                <!--End Name Field-->
+                <!--Start Email Field-->
                   <div class="form-group">
-                    <div class="textarea-container">
-                      <textarea name="message" id="message" class="form-control" rows="4" cols="80" required="required" placeholder="Type a message..."></textarea>
+                    <div class="input-group input-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="now-ui-icons ui-1_email-85"></i>
+                        </span>
+                      </div>
+                      <input type="email" name= "email" id="email" class="form-control mail-field" required="required" placeholder="Email...">
                     </div>
+                <!--Start Email Field-->
+                <!--Start Message Field-->
+                <div class="form-group">
+                  <div class="textarea-container">
+                    <textarea name="message" id="message" class="form-control" rows="4" cols="80" required="required" placeholder="Type a message..."></textarea>
                   </div>
-    
-                  <button type="submit" class="btn btn-primary btn-round btn-block btn-lg">Send Message</button>
-                  
+                </div>
+                <!--End Message Field-->
+              <!--Start Submit Button-->
+              <button type="submit" class="btn btn-primary btn-round btn-block btn-lg">Send Message</button>
+              <!--End Submit Button-->
               </form>
-              
-              <div id="result"></div>
-        
+              <div id="result"></div>     
         <script>
         const form = document.getElementById('form');
         const result = document.getElementById('result');
@@ -221,46 +215,8 @@
                 });
         });
         </script>
-
-        <!--
-
-        <div class="row">
-          <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
-            <div id="contact-form-section cform">
-              <div class="status alert alert-success" style="display:none"></div>
-              <form id="contact-form" class="contact pt-3" name="contact-form" method="post" action="send-email.php">
-                <div class="form-group">
-                  <div class="input-group input-lg">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="now-ui-icons users_circle-08"></i>
-                      </span>
-                    </div>
-                    <input type="text" name="subject" class="form-control" required="required" placeholder="Name...">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-lg">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="now-ui-icons ui-1_email-85"></i>
-                      </span>
-                    </div>
-                    <input type="email" name= "email" class="form-control mail-field" required="required" placeholder="Email...">
-                  </div>
-                </div>
-                </div>
-                <div class="form-group">
-                  <div class="textarea-container">
-                    <textarea name="message" id="message" class="form-control" rows="4" cols="80" required="required" placeholder="Type a message..."></textarea>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-round btn-block btn-lg">Send Message</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div> -->
+    <!--End Contact Form-->
+    <!--Start Footer-->
         </div>
       </div>
     </div>
@@ -292,6 +248,7 @@
     </div>
   </footer>
   </div>
+  <!--End Footer-->
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
